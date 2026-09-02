@@ -18,4 +18,4 @@ EcoDash is an interactive 2D HTML5 Canvas simulation demonstrating how an electr
 
 | Prompt Used | AI Response | Problems Identified | How you improved/modified the code |
 | :--- | :--- | :--- | :--- |
-| N/A | N/A | N/A | N/A |
+| N/A | N/A | N/A | N/A | 
