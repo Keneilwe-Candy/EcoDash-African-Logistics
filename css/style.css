@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
+    background-color: #050614; /* Deep midnight blue */
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: monospace; /* Matches the terminal font in your JS HUD */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +16,7 @@ body {
 }
 
 canvas {
-    border: 3px solid #4CAF50;
-    background-color: #2e2e2e;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+    border: 5px solid #d53a9d; /* Neon Magenta border */
+    background-color: #050614; /* Match the body background */
+    box-shadow: 0 0 20px rgba(213, 58, 157, 0.4); /* Magenta neon glow */
 }
