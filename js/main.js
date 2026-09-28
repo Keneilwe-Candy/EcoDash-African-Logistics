@@ -217,7 +217,7 @@ function gameLoop() {
     ctx.font = "18px monospace";
     ctx.fillText("INSTRUCTIONS:", canvas.width / 2, canvas.height / 2 - 10);
     ctx.fillText(
-      "► Use ARROW KEYS to drive",
+      "Use ARROW KEYS to drive",
       canvas.width / 2,
       canvas.height / 2 + 20,
     );
