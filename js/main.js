@@ -101,9 +101,11 @@ class ElectricDeliveryVehicle {
       // If the car accelerates, I subtract battery power (Math.max prevents it from dropping below zero)
       if (isMoving) {
         this.batteryLevel = Math.max(0, this.batteryLevel - this.drainRate);
-        
+
         // Instantiating a new particle object at the rear of the car and pushing it into the array
-        particlesArray.push(new Particle(this.x + this.width / 2, this.y + this.height));
+        particlesArray.push(
+          new Particle(this.x + this.width / 2, this.y + this.height),
+        );
       }
     }
 
@@ -134,7 +136,6 @@ class ElectricDeliveryVehicle {
   }
 }
 
-
 class Particle {
   constructor(x, y) {
     this.x = x;
@@ -161,7 +162,7 @@ class Particle {
 }
 
 // Creating an empty array to store the active particle objects
-let particlesArray = []; 
+let particlesArray = [];
 
 // 5. WORLD OBJECTS
 // Instantiating the objects from the classes and defining static objects
@@ -171,7 +172,7 @@ let deliveryCargo = {
   y: 340,
   width: 25,
   height: 25,
-  color: "#2868C6",
+  color: "green",
 };
 let roadPothole = { x: 400, y: 330, width: 55, height: 35, color: "#C138B8" };
 
@@ -250,20 +251,19 @@ function gameLoop() {
     return;
   }
 
-  
   // Looping through the array to update and draw every active particle
   for (let i = 0; i < particlesArray.length; i++) {
-      particlesArray[i].update();
-      particlesArray[i].draw(ctx);
-      
-      // Using splice to remove particles that have faded out entirely to free up memory
-      if (particlesArray[i].life <= 0) {
-          particlesArray.splice(i, 1);
-          i--; // Adjusting the index backwards so the loop doesn't skip the next item
-      }
+    particlesArray[i].update();
+    particlesArray[i].draw(ctx);
+
+    // Using splice to remove particles that have faded out entirely to free up memory
+    if (particlesArray[i].life <= 0) {
+      particlesArray.splice(i, 1);
+      i--; // Adjusting the index backwards so the loop doesn't skip the next item
+    }
   }
 
-  // Calling the player's update and draw methods. 
+  // Calling the player's update and draw methods.
   // Doing this after the particles means the car is drawn on top of the dust (Z-indexing).
   playerVehicle.update();
   playerVehicle.draw(ctx);
